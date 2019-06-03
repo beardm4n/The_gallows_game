@@ -18,4 +18,12 @@ let target = {
 // event handler
 $("#map").click(function (event) {
    clicks++;
+
+// click to treasure distance
+   let getDistance = function (event, target) {
+      let diffX = event.offsetX - target.x,
+          diffY = event.offsetY - target.y;
+
+      return Math.sqrt((diffX * diffX) + (diffY * diffY));
+   }
 });
