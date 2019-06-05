@@ -7,6 +7,16 @@ html,
 }
 
 img {
-   width: 400px;
-   height: 400px;
+   width: 600px;
+   height: 600px;
+}
+
+#distance {
+   color: #0009a5;
+   font-size: 20px;
+}
+
+#win {
+   text-decoration: underline;
+   color: #2aff00;
 }

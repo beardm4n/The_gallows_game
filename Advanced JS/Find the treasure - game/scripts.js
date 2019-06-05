@@ -13,24 +13,24 @@ let getDistance = function (event, target) {
 
 // tell the player how close he is to the target
 let getDistanceHint = function (distance) {
-   if (distance < 10) {
-      return "Get burned"
-   } else if (distance < 20) {
+   if (distance < 15) {
+      return "Get burned 🔥"
+   } else if (distance < 30) {
       return "Very hot"
-   } else if (distance < 40) {
+   } else if (distance < 60) {
       return "Hot"
-   } else if (distance < 80) {
+   } else if (distance < 120) {
       return "Heat"
-   } else if (distance < 160) {
+   } else if (distance < 240) {
       return "Coldly"
-   } else if (distance < 320) {
-      return "Very cold"
+   } else if (distance < 480) {
+      return "Very cold ❄"
    }
 };
 
 let clicks = 0,
-    width = 400,
-    height = 400;
+    width = 600,
+    height = 600;
 
 // set treasure's random coordinates
 let target = {
@@ -54,9 +54,13 @@ $("#map").click(function (event) {
    $("#distance").text(distanceHint);
 
    // win check
-   if (distance < 8) {
-      $("#win").text("Treasure found! You made " + clicks + " clicks");
-      // alert("Treasure found! You made " + clicks + " clicks");
+   if (distance < 12) {
+      alert("Treasure found! You made " + clicks + " clicks");
+   }
+
+   // click restrictions
+   if (clicks  > 20) {
+      alert("Game over");
    }
 });
 
