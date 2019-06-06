@@ -16,7 +16,7 @@ img {
    font-size: 20px;
 }
 
-#win {
+#clickStatus {
    text-decoration: underline;
-   color: #2aff00;
+   color: #ff0005;
 }

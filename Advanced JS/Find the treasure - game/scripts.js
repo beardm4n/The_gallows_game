@@ -18,7 +18,7 @@ let getDistanceHint = function (distance) {
    } else if (distance < 30) {
       return "Very hot"
    } else if (distance < 60) {
-      return "Hot"
+      return "Hot";
    } else if (distance < 120) {
       return "Heat"
    } else if (distance < 240) {
@@ -29,6 +29,7 @@ let getDistanceHint = function (distance) {
 };
 
 let clicks = 0,
+    maxClicks = 20,
     width = 600,
     height = 600;
 
@@ -43,6 +44,7 @@ console.log(target.y);
 // event handler
 $("#map").click(function (event) {
    clicks++;
+   maxClicks--;
 
    // we get the distance from the click to the treasure
    let distance = getDistance(event, target);
@@ -58,9 +60,19 @@ $("#map").click(function (event) {
       alert("Treasure found! You made " + clicks + " clicks");
    }
 
+   // remaining clicks
+   if (clicks > 15) {
+      $("#clickStatus").text("Left " + maxClicks + " clicks");
+   }
+
    // click restrictions
-   if (clicks  > 20) {
+   if (clicks  > 19) {
       alert("Game over");
+      $("#clickStatus").text("Left " + maxClicks + " clicks").remove();
    }
 });
 
+   // page reset button
+   document.querySelector("#btn").onclick = function() {
+      window.location.reload();
+   };
