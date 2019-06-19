@@ -4,7 +4,7 @@ let ctx = canvas.getContext("2d");
 
 let circle = function  (x, y, radius, fillCircle) {
    ctx.beginPath();
-   ctx.arc(x, y, radius, 0, Math.PI * 2, false)
+   ctx.arc(x, y, radius, 0, Math.PI * 2, false);
 
    if (fillCircle) {
       ctx.fill();
