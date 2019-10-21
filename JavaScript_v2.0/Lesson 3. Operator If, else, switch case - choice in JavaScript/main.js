@@ -33,19 +33,63 @@ let $birthday = document.querySelector('.birthday'),
     $result1 = document.querySelector('.result1');
 
 $btn1.addEventListener('click', () => {
-   console.log($birthday.value);
-   console.log($birthday.value.split('-'));
-   let d = $birthday.value.split('-');
-   let date = new Date(d[2], d[1], d[0]);
-   // console.log(date);
-   // let date = new Date(),
-   //     currDate = date.getDay(),
-   //     currMonth = date.getMonth(),
-   //     currYear = date.getFullYear();
-   // console.log(date);
-   // console.log(currDate);
-   // console.log(currMonth);
-   // console.log(currYear);
-   // console.log(`${currYear}-${currMonth}-${currDate}`);
 
+   let date = new Date(),
+       currYear = date.getFullYear();
+
+    if ($birthday.value >= 2000) {
+       let age = currYear - Number($birthday.value);
+       $result1.innerHTML = age;
+    } else {
+       console.log(currYear - $birthday.value);
+    }
+
+   $birthday.value = '';
+});
+
+// task #5
+let $num = document.querySelector('.num'),
+    $btn2 = document.querySelector('.btn2'),
+    $result2 = document.querySelector('.result2');
+
+$btn2.addEventListener('click', () => {
+   if (+$num.value > 0) {
+      $result2.innerHTML = `This number = ${$num.value} = more then zero`;
+   } else if (+$num.value < 0) {
+      $result2.innerHTML = `This number = ${$num.value} = less then zero`;
+   } else {
+      $result2.innerHTML = `This number = ${$num.value} = is equal zero`;
+   }
+
+   $num.value = '';
+});
+
+// task #6
+let $num1 = document.querySelector('.num1'),
+    $btn3 = document.querySelector('.btn3'),
+    $result3 = document.querySelector('.result3');
+
+$btn3.addEventListener('click', () => {
+   if ($num1.value % 2 === 0) {
+      $result3.innerHTML = 'Even';
+   } else {
+      $result3.innerHTML = 'Odd';
+   }
+});
+
+// task #7
+let $name = document.querySelector('.greeting'),
+    $btn4 = document.querySelector('.btn4'),
+    $result4 = document.querySelector('.result4');
+
+$btn4.addEventListener('click', () => {
+   const name = $name.value;
+   // if ($name.value.length === 0) {
+   //    alert('Input is empty');
+   // } else if () {
+   //
+   // }
+
+   $result4.innerHTML = `Hello ${name} !`;
+   $name.value = '';
 });
