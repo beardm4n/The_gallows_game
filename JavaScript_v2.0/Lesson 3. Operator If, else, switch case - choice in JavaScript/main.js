@@ -38,8 +38,7 @@ $btn1.addEventListener('click', () => {
        currYear = date.getFullYear();
 
     if ($birthday.value >= 2000) {
-       let age = currYear - Number($birthday.value);
-       $result1.innerHTML = age;
+       $result1.innerHTML = `${currYear - Number($birthday.value)}`;
     } else {
        console.log(currYear - $birthday.value);
     }
@@ -84,12 +83,43 @@ let $name = document.querySelector('.greeting'),
 
 $btn4.addEventListener('click', () => {
    const name = $name.value;
-   // if ($name.value.length === 0) {
-   //    alert('Input is empty');
-   // } else if () {
-   //
-   // }
 
-   $result4.innerHTML = `Hello ${name} !`;
+   if ($name.value.trim().length === 0) {
+      alert('Input is empty or space entered');
+   } else $result4.innerHTML = `Hello ${name} !`;
+
    $name.value = '';
+});
+
+// task #8
+let $house = document.querySelector('.guessHouse'),
+    $btn5 = document.querySelector('.btn5'),
+    $result5 = document.querySelector('.result5');
+
+$btn5.addEventListener('click', () => {
+   if (+$house.value >= 1 && +$house.value <= 5) {
+      $result5.innerHTML = '1st street';
+   } else if (+$house.value >= 6 && +$house.value <= 11) {
+      $result5.innerHTML = '2nd street';
+   } else if (+$house.value >= 12 && +$house.value <= 20) {
+      $result5.innerHTML = '3rd street';
+   }
+
+   $house.value = '';
+});
+
+// task #9
+let $tax = document.querySelector('.tax'),
+    $btn6 = document.querySelector('.btn6'),
+    $result6 = document.querySelector('.result6');
+
+$btn6.addEventListener('click', () => {
+   if (+$tax.value >= 0 && +$tax.value <= 499) $result6.innerHTML = '2525 KZT';
+   if (+$tax.value >= 500 && +$tax.value <= 1199) $result6.innerHTML = '5050 KZT';
+   if (+$tax.value >= 1200 && +$tax.value <= 1599) $result6.innerHTML = '8275 KZT';
+   if (+$tax.value >= 1600 && +$tax.value <= 1899) $result6.innerHTML = '9675 KZT';
+   if (+$tax.value >= 1900 && +$tax.value <= 1999) $result6.innerHTML = '11075 KZT';
+   if (+$tax.value >= 2000) $result6.innerHTML = $result6.innerHTML = '15000 KZT';
+
+   $tax.value = '';
 });
