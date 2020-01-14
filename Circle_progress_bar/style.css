@@ -8,8 +8,24 @@ html, body {
     height: 100%;    
 }
 
-.progress-ring__circle {
+.day {
+    color: white;
+}
+
+.progress-ring__hours {
     transform-origin: center;
     transform: rotate(-90deg);
     transition: stroke-dashoffset 0.5s;
+}
+
+.progress-ring__minutes {
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 0.5s;
+}
+
+.progress-ring__seconds {
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 1s;
 }
