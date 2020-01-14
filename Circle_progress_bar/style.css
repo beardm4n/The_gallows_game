@@ -1,0 +1,15 @@
+html, body {
+    background-color: rgb(10, 114, 155);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    height: 100%;    
+}
+
+.progress-ring__circle {
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 0.5s;
+}
