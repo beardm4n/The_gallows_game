@@ -2,8 +2,8 @@
 (() => {
    const canvas = document.querySelector('canvas');
    const ctx = canvas.getContext('2d');
-   // const numberOfRings = prompt('How mane rings to draw?', 0);
-const numberOfRings = 1;
+   // const numberOfRings = prompt('How many rings to draw?', 0);
+   const numberOfRings = 1;
    // Размер canvas зададим через функцию:
    function init() {
       canvas.width = innerWidth;
