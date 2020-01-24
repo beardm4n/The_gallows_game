@@ -45,8 +45,8 @@
 
          let now = Math.abs(i);
 
-         if (i > 70) {
-            displacement = (i - 70) / 70;
+         if (now > 70) {
+            displacement = (now - 70) / 70;
          }
          
          if (displacement >= 1) displacement = 1;
@@ -57,7 +57,7 @@
          let x = centerX + Math.cos(currentAngle) * waveAmplitude;
          let y = centerY + Math.sin(currentAngle) * waveAmplitude;
          // добавляем 100 к centerX, чтобы убрать прямую линию, исходящую из центра окружности
-         ( i > -180 ) ? ctx.lineTo(x, y) : ctx.moveTo(centerX + ringRadius, centerY);
+         ( i >= -180 ) ? ctx.lineTo(x, y) : ctx.moveTo(centerX + ringRadius, centerY);
       }
 
       ctx.closePath();
