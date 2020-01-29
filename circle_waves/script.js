@@ -2,8 +2,16 @@
 (() => {
    const canvas = document.querySelector('canvas');
    const ctx = canvas.getContext('2d');
-   // const numberOfRings = prompt('How many rings to draw?', 0);
-   const numberOfRings = 3;
+   const numberOfRings = prompt('How many rings to draw?', 1);
+
+   checkNum(numberOfRings);
+
+   function checkNum(num) {
+      if ( num === null ) return alert('The end');
+      if ( isNaN(num) ) alert('Non-numerical');
+      if ( +num === 0 ) alert('You entered no number. Please enter a number');
+   }
+
    // радиус окружности
    const ringRadius = 150;
 
