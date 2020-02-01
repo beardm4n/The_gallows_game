@@ -1,4 +1,4 @@
-const path = require('path'); // модуль позволит работать с путями в текущей ОС
+const path = require('path'); // модуль NodeJs позволит работать с путями в текущей ОС
 
 module.exports = {
    // входной файл приложения
