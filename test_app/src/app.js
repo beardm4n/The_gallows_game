@@ -1,3 +1,4 @@
+import { isValid } from './utils';
 import './style.css';
 
 const form = document.getElementById('form');
@@ -10,5 +11,12 @@ form.addEventListener('submit', submitFormHandler);
 
 function submitFormHandler(event) {
    event.preventDefault(); // отменяем поведение по умолчанию, в данном случае - обновление страницы
-   console.warn(input.value);
+   console.log(input.value)
+   if (isValid(input.value)) {
+      const question = {
+         text: input.value.trim(),
+         date: new Date().toJSON(),
+      }
+
+   } 
 }
