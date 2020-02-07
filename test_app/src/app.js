@@ -11,12 +11,19 @@ form.addEventListener('submit', submitFormHandler);
 
 function submitFormHandler(event) {
    event.preventDefault(); // отменяем поведение по умолчанию, в данном случае - обновление страницы
-   console.log(input.value)
+
    if (isValid(input.value)) {
       const question = {
          text: input.value.trim(),
          date: new Date().toJSON(),
       }
-
+      
+      // заблокируем форму пока будет идти запрос на сервер
+      submitBtn.disabled = true;
+      // Async request to srver to save question
+      console.log('Question', question);
+      input.value = '';
+      input.className = '';
+      submitBtn.disabled = false;
    } 
 }
