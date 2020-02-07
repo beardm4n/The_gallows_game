@@ -8,6 +8,10 @@ const input = form.querySelector('#question-input');
 const submitBtn = form.querySelector('#submit');
 
 form.addEventListener('submit', submitFormHandler);
+// добавим валидацию input, по которой будет активна кнопка отправки
+input.addEventListener('input', () => {
+   submitBtn.disabled = !isValid(input.value);
+})
 
 function submitFormHandler(event) {
    event.preventDefault(); // отменяем поведение по умолчанию, в данном случае - обновление страницы
