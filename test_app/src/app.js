@@ -28,6 +28,5 @@ function submitFormHandler(event) {
       console.log('Question', question);
       input.value = '';
       input.className = '';
-      submitBtn.disabled = false;
    } 
 }
