@@ -1,3 +1,4 @@
+import { Question } from './question';
 import { isValid } from './utils';
 import './style.css';
 
@@ -25,8 +26,10 @@ function submitFormHandler(event) {
       // заблокируем форму пока будет идти запрос на сервер
       submitBtn.disabled = true;
       // Async request to srver to save question
-      console.log('Question', question);
-      input.value = '';
-      input.className = '';
+      Question.create(question).then(() => {
+         input.value = '';
+         input.className = '';
+         submitBtn.disabled = false;
+      })
    } 
 }
