@@ -29,7 +29,6 @@ function submitFormHandler(event) {
       Question.create(question).then(() => {
          input.value = '';
          input.className = '';
-         submitBtn.disabled = false;
       })
    } 
 }

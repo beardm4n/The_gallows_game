@@ -10,6 +10,16 @@ export class Question {
          },
       })
          .then(response => response.json())
-         .then(response => console.log(response))
+         .then(response => {
+            console.log(response)
+            question.id = response.name;
+            console.warn(question.id);
+            return question;
+         })
+         .then(addToLocalStorage)
    }
+}
+// добавляем вопрос в localStorage
+function addToLocalStorage(question) {
+
 }
