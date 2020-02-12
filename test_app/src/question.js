@@ -14,6 +14,7 @@ export class Question {
             console.log(response)
             question.id = response.name;
             console.warn(question.id);
+            console.warn(question);
             return question;
          })
          .then(addToLocalStorage)
@@ -21,5 +22,5 @@ export class Question {
 }
 // добавляем вопрос в localStorage
 function addToLocalStorage(question) {
-
+   localStorage.setItem('question', JSON.stringify(question));
 }
