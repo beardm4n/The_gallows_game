@@ -14,7 +14,7 @@ module.exports = {
    },
    // настройка devServer
    devServer: {
-      port: 3000,
+      port: 4000,
    },
    // подключаем плагины
    plugins: [
