@@ -18,9 +18,10 @@ export class Question {
             return question;
          })
          .then(addToLocalStorage)
+         // .catch(err => console.error(err))
    }
 }
-// добавляем вопрос в localStorage
+// создали приватную функцию добавили вопрос в localStorage
 function addToLocalStorage(question) {
    localStorage.setItem('question', JSON.stringify(question));
 }

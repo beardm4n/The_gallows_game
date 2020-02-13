@@ -25,7 +25,7 @@ function submitFormHandler(event) {
       
       // заблокируем форму пока будет идти запрос на сервер
       submitBtn.disabled = true;
-      // Async request to srver to save question
+      // Async request to server to save question
       Question.create(question).then(() => {
          input.value = '';
          input.className = '';
