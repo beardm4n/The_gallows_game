@@ -1,53 +1,92 @@
 /**
- * Body CSS
- */
+* Body CSS
+*/
 
- html,
- body {
-   height: 100%;
- }
- 
- html,
- body,
- input,
- textarea,
- button {
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
- }
- 
- 
- /**
-  * Sidebar CSS
-  */
- 
- #sidebar {
-   background-color: #2196F3;
-   padding: 15px;
- }
- 
- @media (min-width: 768px) {
-   #sidebar {
-     position: fixed;
-     top: 0;
-     bottom: 0;
-     width: 180px;
-     height: 100%;
-     padding-top: 30px;
-   }
- }
- 
- 
- /**
-  * Content CSS
-  */
- @media (min-width: 768px) {
-   #content {
-     margin-left: 180px;
-   }
- }
+html,
+body {
+  height: 100%;
+}
 
- .author {
-   font-size: .8rem;
- }
+html,
+body,
+input,
+textarea,
+button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+/**
+* Sidebar CSS
+*/
+
+#sidebar {
+  background-color: #2196F3;
+  padding: 15px;
+}
+
+@media (min-width: 768px) {
+  #sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 180px;
+    height: 100%;
+    padding-top: 30px;
+  }
+}
+
+/**
+* Content CSS
+*/
+@media (min-width: 768px) {
+  #content {
+    margin-left: 180px;
+  }
+}
+
+.author {
+  font-size: .8rem;
+}
+
+/**
+* Preloader CSS
+*/
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  /* фоновый цвет */
+  background: #e0e0e0;
+  z-index: 1001;
+}
+
+.preloader__image {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loaded_hiding .preloader {
+  opacity: 0.6;
+}
+
+.loaded .preloader {
+  display: none;
+}

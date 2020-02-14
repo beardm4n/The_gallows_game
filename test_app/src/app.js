@@ -18,17 +18,26 @@ function submitFormHandler(event) {
    event.preventDefault(); // отменяем поведение по умолчанию, в данном случае - обновление страницы
 
    if (isValid(input.value)) {
+      const body = document.querySelector('body');
       const question = {
          text: input.value.trim(),
          date: new Date().toJSON(),
       }
+      // отображение preloader
+      body.classList.add('loaded_hiding');
+      body.classList.remove('loaded');
       
-      // заблокируем форму пока будет идти запрос на сервер
+      // заблокируем кнопку пока будет идти запрос на сервер
       submitBtn.disabled = true;
       // Async request to server to save question
       Question.create(question).then(() => {
+         // скрытие preloader
+         body.classList.add('loaded');
+         body.classList.remove('loaded_hiding');
+         // очищаем форму и разблокируем кнопку после завершения запроса
          input.value = '';
          input.className = '';
+         submitBtn.disabled = false;
       })
-   } 
+   }
 }

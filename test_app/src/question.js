@@ -24,6 +24,7 @@ export class Question {
 // создали приватную функцию добавили вопрос в localStorage
 function addToLocalStorage(question) {
    const all = getQuestionFromLocalStorage();
+
    all.push(question);
    localStorage.setItem('question', JSON.stringify(all));
 }

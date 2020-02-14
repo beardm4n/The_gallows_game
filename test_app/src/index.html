@@ -8,7 +8,7 @@
     <link href="https://cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.muicss.com/mui-latest/js/mui.min.js"></script>
   </head>
-  <body>
+  <body class="loaded">
     <div id="sidebar">
       <div class="mui--text-white mui--text-display1 mui--align-vertical">
         Подкаст вопросы
@@ -24,7 +24,7 @@
           <div class="mui--text-black-54 mui--text-body2">Задай вопрос</div>
           <div class="mui-divider"></div>
           <br>
-            <!-- FORM -->
+          <!-- FORM -->
           <form class="mui-form" id="form">
             <div class="mui-textfield mui-textfield--float-label">
               <input type="text" id="question-input" required minlength="10" maxlength="256">
@@ -53,6 +53,14 @@
           <br>
         </div>
       </div>
+    </div>
+    <!-- Preloader -->
+    <div class="preloader">
+      <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor"
+          d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+        </path>
+      </svg>
     </div>
   </body>
 </html>
