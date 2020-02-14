@@ -23,5 +23,12 @@ export class Question {
 }
 // создали приватную функцию добавили вопрос в localStorage
 function addToLocalStorage(question) {
-   localStorage.setItem('question', JSON.stringify(question));
+   const all = getQuestionFromLocalStorage();
+   all.push(question);
+   localStorage.setItem('question', JSON.stringify(all));
+}
+// забираем значение из localStorage: если еще не создано вызовращаем пустой массив.
+// парсим, потому что localStorage.getItem() возвращает строку, а нам нужен объект, чтобы работать дальше
+function getQuestionFromLocalStorage() {
+   return JSON.parse(localStorage.getItem('question') || '[]')
 }
