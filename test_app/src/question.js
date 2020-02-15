@@ -18,7 +18,7 @@ export class Question {
             return question;
          })
          .then(addToLocalStorage)
-         // .catch(err => console.error(err))
+         .catch(err => console.error(err))
    }
 }
 // создали приватную функцию добавили вопрос в localStorage
