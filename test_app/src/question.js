@@ -15,7 +15,12 @@ export class Question {
             return question;
          })
          .then(addToLocalStorage)
+         .then(Question.renderList)
          .catch(err => console.error(err))
+   }
+   // создадим статический метод для отрисовки данных на странице
+   static renderList() {
+      const question = getQuestionFromLocalStorage();
    }
 }
 // создали приватную функцию добавили вопрос в localStorage
