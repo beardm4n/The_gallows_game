@@ -21,6 +21,16 @@ export class Question {
    // создадим статический метод для отрисовки данных на странице
    static renderList() {
       const question = getQuestionFromLocalStorage();
+
+      //создадим базовый html, который будет содержать в себе все основные карточки для отображения инфы
+      const html = question.length 
+         ? question.map(toCard).join('')
+         : `<div class="mui--text-headline">Вопросов нет</div>`;
+
+      // теперь надо выбрать объект куда будем вставлять полученный html
+      const list = document.getElementById('list');
+
+      list.innerHTML = html;
    }
 }
 // создали приватную функцию добавили вопрос в localStorage
@@ -34,4 +44,17 @@ function addToLocalStorage(question) {
 // парсим, потому что localStorage.getItem() возвращает строку, а нам нужен объект, чтобы работать дальше
 function getQuestionFromLocalStorage() {
    return JSON.parse(localStorage.getItem('question') || '[]')
+}
+
+function toCard(question) {
+   return `
+      <div class="mui--text-black-54">
+         ${new Date(question.date).toLocaleDateString()}
+         ${new Date(question.date).toLocaleTimeString()}
+      </div>
+      <div>
+         ${question.text}
+      </div>
+      <br>
+   `
 }
