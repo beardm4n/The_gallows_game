@@ -45,7 +45,7 @@ function addToLocalStorage(question) {
 function getQuestionFromLocalStorage() {
    return JSON.parse(localStorage.getItem('question') || '[]')
 }
-
+// функция для отрисовки вопросов
 function toCard(question) {
    return `
       <div class="mui--text-black-54">
