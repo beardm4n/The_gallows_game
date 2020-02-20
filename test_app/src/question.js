@@ -38,12 +38,12 @@ function addToLocalStorage(question) {
    const all = getQuestionFromLocalStorage();
 
    all.push(question);
-   localStorage.setItem('question', JSON.stringify(all));
+   localStorage.setItem('questions', JSON.stringify(all));
 }
 // забираем значение из localStorage: если еще не создано вызовращаем пустой массив.
 // парсим, потому что localStorage.getItem() возвращает строку, а нам нужен объект, чтобы работать дальше
 function getQuestionFromLocalStorage() {
-   return JSON.parse(localStorage.getItem('question') || '[]')
+   return JSON.parse(localStorage.getItem('questions') || '[]')
 }
 // функция для отрисовки вопросов
 function toCard(question) {
