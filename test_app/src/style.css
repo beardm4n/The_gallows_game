@@ -50,6 +50,12 @@ button {
   font-size: .8rem;
 }
 
+.mui-btn--danger {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+
 /**
 * Preloader CSS
 */
