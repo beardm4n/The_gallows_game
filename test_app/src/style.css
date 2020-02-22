@@ -50,7 +50,7 @@ button {
   font-size: .8rem;
 }
 
-.mui-btn--danger {
+.floating-btn {
   position: fixed;
   bottom: 50px;
   right: 50px;
