@@ -56,6 +56,23 @@ button {
   right: 50px;
 }
 
+.modal {
+  max-width: 500px;
+  max-height: 300px;
+  margin: 100px auto;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.modal > h1 {
+  text-align: center;
+}
+
+.modal .modal-content {
+  padding: 1rem;
+}
+
 /**
 * Preloader CSS
 */

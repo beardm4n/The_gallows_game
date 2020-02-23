@@ -1,8 +1,9 @@
 import { Question } from './question';
-import { isValid } from './utils';
+import { createModal, isValid } from './utils';
 import './style.css';
 
 const form = document.getElementById('form');
+const modalBtn = document.getElementById('modal-btn');
 
 // для того, чтобы не делать запрос к input и button по всему document, обратимся к form
 const input = form.querySelector('#question-input');
@@ -13,6 +14,7 @@ form.addEventListener('submit', submitFormHandler);
 input.addEventListener('input', () => {
    submitBtn.disabled = !isValid(input.value);
 })
+modalBtn.addEventListener('click', openModal);
 
 function submitFormHandler(event) {
    event.preventDefault(); // отменяем поведение по умолчанию, в данном случае - обновление страницы
@@ -40,4 +42,8 @@ function submitFormHandler(event) {
          submitBtn.disabled = false;
       })
    }
+}
+
+function openModal() {
+   createModal('Autorization', '<h1>Test</h1>');
 }
