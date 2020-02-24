@@ -1,7 +1,8 @@
+// проверка валидности
 export function isValid(value) {
    return value.length >= 10
 }
-
+// создание модального окна при помощи MUI framework
 export function createModal(title, content) {
    const modal = document.createElement('div');
    modal.classList.add('modal');
