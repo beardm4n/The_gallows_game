@@ -1,5 +1,6 @@
 import { Question } from './question';
 import { createModal, isValid } from './utils';
+import { getAuthForm } from './authorization';
 import './style.css';
 
 const form = document.getElementById('form');
@@ -45,5 +46,5 @@ function submitFormHandler(event) {
 }
 
 function openModal() {
-   createModal('Autorization', '<h1>Test</h1>');
+   createModal('Autorization', getAuthForm());
 }
