@@ -47,4 +47,12 @@ function submitFormHandler(event) {
 
 function openModal() {
    createModal('Autorization', getAuthForm());
+   document
+      .getElementById('auth-form')
+      .addEventListener('submit', authFormHandler, {once: true});
+}
+
+// создадим функцию для предотвращения перезагрузки страницы при отправки формы
+function authFormHandler(event) {
+   event.preventDefault();
 }
