@@ -52,7 +52,9 @@ function openModal() {
       .addEventListener('submit', authFormHandler, {once: true});
 }
 
-// создадим функцию для предотвращения перезагрузки страницы при отправки формы
+// создадим функцию для авторизации
 function authFormHandler(event) {
    event.preventDefault();
+
+   //логика по авторизации
 }
