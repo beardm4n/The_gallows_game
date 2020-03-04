@@ -56,5 +56,5 @@ function openModal() {
 function authFormHandler(event) {
    event.preventDefault();
 
-   //логика по авторизации
+   // логика по авторизации
 }
