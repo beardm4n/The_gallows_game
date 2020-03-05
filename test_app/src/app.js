@@ -57,4 +57,8 @@ function authFormHandler(event) {
    event.preventDefault();
 
    // логика по авторизации
+
+   // получим доступ к полям email и password:
+   const email = event.target.querySelector('#email').value;
+   const password = event.target.querySelector('#password').value;
 }
